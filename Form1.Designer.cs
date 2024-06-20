@@ -28,71 +28,83 @@
         /// </summary>
         private void InitializeComponent()
         {
-            Btn_Ingresar = new Button();
-            TxtB_Usuario = new TextBox();
-            TxTB_Contraseña = new TextBox();
+            System.ComponentModel.ComponentResourceManager resources = new System.ComponentModel.ComponentResourceManager(typeof(frm_login));
+            BtnIngresar = new Button();
+            TxtBUsuario = new TextBox();
+            TxTBPass = new TextBox();
             pictureBox1 = new PictureBox();
-            Titulo = new Label();
+            lblTitulo = new Label();
             ((System.ComponentModel.ISupportInitialize)pictureBox1).BeginInit();
             SuspendLayout();
             // 
-            // Btn_Ingresar
+            // BtnIngresar
             // 
-            Btn_Ingresar.Location = new Point(506, 270);
-            Btn_Ingresar.Name = "Btn_Ingresar";
-            Btn_Ingresar.Size = new Size(94, 29);
-            Btn_Ingresar.TabIndex = 0;
-            Btn_Ingresar.Text = "Ingresar";
-            Btn_Ingresar.UseVisualStyleBackColor = true;
-            Btn_Ingresar.Click += button1_Click;
+            BtnIngresar.Location = new Point(491, 221);
+            BtnIngresar.Margin = new Padding(3, 2, 3, 2);
+            BtnIngresar.Name = "BtnIngresar";
+            BtnIngresar.Size = new Size(111, 42);
+            BtnIngresar.TabIndex = 0;
+            BtnIngresar.Text = "INGRESAR";
+            BtnIngresar.UseVisualStyleBackColor = true;
+            BtnIngresar.Click += button1_Click;
             // 
-            // TxtB_Usuario
+            // TxtBUsuario
             // 
-            TxtB_Usuario.BackColor = SystemColors.Window;
-            TxtB_Usuario.Location = new Point(418, 149);
-            TxtB_Usuario.Name = "TxtB_Usuario";
-            TxtB_Usuario.Size = new Size(412, 27);
-            TxtB_Usuario.TabIndex = 1;
-            TxtB_Usuario.Text = "Usuario";
-            TxtB_Usuario.TextChanged += textBox1_TextChanged;
+            TxtBUsuario.BackColor = SystemColors.Window;
+            TxtBUsuario.Location = new Point(366, 112);
+            TxtBUsuario.Margin = new Padding(3, 2, 3, 2);
+            TxtBUsuario.Name = "TxtBUsuario";
+            TxtBUsuario.Size = new Size(361, 23);
+            TxtBUsuario.TabIndex = 1;
+            TxtBUsuario.Text = "Usuario";
+            TxtBUsuario.TextChanged += textBox1_TextChanged;
+            TxtBUsuario.Enter += TxtBUsuario_Enter;
+            TxtBUsuario.Leave += TxtBUsuario_Leave;
             // 
-            // TxTB_Contraseña
+            // TxTBPass
             // 
-            TxTB_Contraseña.BackColor = SystemColors.Window;
-            TxTB_Contraseña.Location = new Point(418, 210);
-            TxTB_Contraseña.Name = "TxTB_Contraseña";
-            TxTB_Contraseña.Size = new Size(412, 27);
-            TxTB_Contraseña.TabIndex = 2;
-            TxTB_Contraseña.Text = "Contraseña";
+            TxTBPass.BackColor = SystemColors.Window;
+            TxTBPass.Location = new Point(366, 158);
+            TxTBPass.Margin = new Padding(3, 2, 3, 2);
+            TxTBPass.Name = "TxTBPass";
+            TxTBPass.Size = new Size(361, 23);
+            TxTBPass.TabIndex = 2;
+            TxTBPass.Text = "Contraseña";
+            TxTBPass.Enter += TxTBPass_Enter;
+            TxTBPass.Leave += TxTBPass_Leave;
             // 
             // pictureBox1
             // 
-            pictureBox1.Location = new Point(64, 81);
+            pictureBox1.Image = (Image)resources.GetObject("pictureBox1.Image");
+            pictureBox1.Location = new Point(56, 61);
+            pictureBox1.Margin = new Padding(3, 2, 3, 2);
             pictureBox1.Name = "pictureBox1";
-            pictureBox1.Size = new Size(298, 333);
+            pictureBox1.Size = new Size(261, 250);
+            pictureBox1.SizeMode = PictureBoxSizeMode.Zoom;
             pictureBox1.TabIndex = 3;
             pictureBox1.TabStop = false;
             // 
-            // Titulo
+            // lblTitulo
             // 
-            Titulo.AutoSize = true;
-            Titulo.Font = new Font("Segoe UI", 20F);
-            Titulo.Location = new Point(481, 37);
-            Titulo.Name = "Titulo";
-            Titulo.Size = new Size(291, 46);
-            Titulo.TabIndex = 4;
-            Titulo.Text = "Ingreso al Sistema";
+            lblTitulo.AutoSize = true;
+            lblTitulo.Font = new Font("Segoe UI", 20F);
+            lblTitulo.Location = new Point(421, 28);
+            lblTitulo.Name = "lblTitulo";
+            lblTitulo.Size = new Size(232, 37);
+            lblTitulo.TabIndex = 4;
+            lblTitulo.Text = "Ingreso al Sistema";
             // 
             // frm_login
             // 
-            AutoScaleDimensions = new SizeF(8F, 20F);
+            AutoScaleDimensions = new SizeF(7F, 15F);
             AutoScaleMode = AutoScaleMode.Font;
-            ClientSize = new Size(926, 518);
-            Controls.Add(Titulo);
+            ClientSize = new Size(810, 388);
+            Controls.Add(lblTitulo);
             Controls.Add(pictureBox1);
-            Controls.Add(TxTB_Contraseña);
-            Controls.Add(TxtB_Usuario);
-            Controls.Add(Btn_Ingresar);
+            Controls.Add(TxTBPass);
+            Controls.Add(TxtBUsuario);
+            Controls.Add(BtnIngresar);
+            Margin = new Padding(3, 2, 3, 2);
             Name = "frm_login";
             Text = "Login";
             Load += frm_login_Load;
@@ -103,10 +115,10 @@
 
         #endregion
 
-        private Button Btn_Ingresar;
-        private TextBox TxtB_Usuario;
-        private TextBox TxTB_Contraseña;
+        private Button BtnIngresar;
+        private TextBox TxtBUsuario;
+        private TextBox TxTBPass;
         private PictureBox pictureBox1;
-        private Label Titulo;
+        private Label lblTitulo;
     }
 };
