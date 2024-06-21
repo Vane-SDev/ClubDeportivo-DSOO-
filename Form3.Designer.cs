@@ -145,8 +145,8 @@
             // 
             cboxTipo.AutoCompleteCustomSource.AddRange(new string[] { "DNI", "Pasaporte" });
             cboxTipo.FormattingEnabled = true;
-            cboxTipo.Items.AddRange(new object[] { "DNI", "Pasaporte", "Libreta Cívica", "Libreta de Enrolamiento" });
-            cboxTipo.Location = new Point(136, 125);
+            cboxTipo.Items.AddRange(new object[] { "DNI", "Pasaporte", "Libreta Cívica" });
+            cboxTipo.Location = new Point(128, 125);
             cboxTipo.Name = "cboxTipo";
             cboxTipo.Size = new Size(87, 23);
             cboxTipo.TabIndex = 11;
@@ -178,6 +178,7 @@
             // rdbtnSocio
             // 
             rdbtnSocio.AutoSize = true;
+            rdbtnSocio.Checked = true;
             rdbtnSocio.Location = new Point(368, 163);
             rdbtnSocio.Name = "rdbtnSocio";
             rdbtnSocio.Size = new Size(60, 19);
@@ -185,6 +186,7 @@
             rdbtnSocio.TabStop = true;
             rdbtnSocio.Text = "SOCIO";
             rdbtnSocio.UseVisualStyleBackColor = true;
+            rdbtnSocio.CheckedChanged += rdbtnSocio_CheckedChanged;
             // 
             // radbtnNoSocio
             // 
@@ -193,7 +195,6 @@
             radbtnNoSocio.Name = "radbtnNoSocio";
             radbtnNoSocio.Size = new Size(81, 19);
             radbtnNoSocio.TabIndex = 15;
-            radbtnNoSocio.TabStop = true;
             radbtnNoSocio.Text = "NO SOCIO";
             radbtnNoSocio.UseVisualStyleBackColor = true;
             radbtnNoSocio.CheckedChanged += radioButton2_CheckedChanged;

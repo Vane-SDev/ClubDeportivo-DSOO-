@@ -23,25 +23,64 @@ namespace ClubDeportivo
             //Se inserta una fila al final
 
             int fila = dtgvRegistro.Rows.Add();
+            string tipodoc;
+            int eleccion = cboxTipo.SelectedIndex;
+           
+                
+                  
 
             //Se agregan datos a las filas, considerando que s einicia en la columna 0
 
-            dtgvRegistro.Rows[fila].Cells[0].Value = txtNombre.Text;
-            dtgvRegistro.Rows[fila].Cells[1].Value = txtApellido.Text;
-            dtgvRegistro.Rows[fila].Cells[2].Value = txtNumero.Text;
+            dtgvRegistro.Rows[fila].Cells[1].Value = txtNombre.Text;
+            dtgvRegistro.Rows[fila].Cells[2].Value = txtApellido.Text;
+           
+            //tipo - combo box
 
-            //Blanqueo de los text box
+            switch (eleccion)
+
+             {
+                 case 0:
+                     dtgvRegistro.Rows[fila].Cells[3].Value =  "DNI";
+                     break;
+                 case 1:
+                     dtgvRegistro.Rows[fila].Cells[3].Value = "Pasaporte";
+                     break;
+                 case 2:
+                     dtgvRegistro.Rows[fila].Cells[3].Value = "Libreta Civica";
+                     break;
+             }
+            dtgvRegistro.Rows[fila].Cells[4].Value = txtNumero.Text;
+            //boton apto fisico
+            if (chkAptoFisico.Checked==false)
+            {
+                dtgvRegistro.Rows[fila].Cells[5].Value = "No entregado";
+            }
+            else
+            {
+                dtgvRegistro.Rows[fila].Cells[5].Value = "Entregado";
+            }
+            //socio-no socio
+            if (rdbtnSocio.Checked == true)
+            {
+                dtgvRegistro.Rows[fila].Cells[6].Value = "Socio";
+            }
+            else
+            {
+                dtgvRegistro.Rows[fila].Cells[6].Value = "No Socio";
+            }
+
+
+            //Blanqueo de los text box 
 
             txtNombre.Text = "";
             txtApellido.Text = "";
             txtNumero.Text = "";
+            rdbtnSocio.Checked = true;
+            chkAptoFisico.Checked = false;
 
             //Pone foco en el objeto detallado
 
             txtNombre.Focus();
-
-
-
 
         }
 
@@ -86,6 +125,11 @@ namespace ClubDeportivo
         }
 
         private void registroPersona_Load(object sender, EventArgs e)
+        {
+
+        }
+
+        private void rdbtnSocio_CheckedChanged(object sender, EventArgs e)
         {
 
         }
