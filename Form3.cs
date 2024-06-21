@@ -12,6 +12,7 @@ namespace ClubDeportivo
 {
     public partial class registroPersona : Form
     {
+        int num;
         public registroPersona()
         {
             InitializeComponent();
@@ -23,35 +24,32 @@ namespace ClubDeportivo
             //Se inserta una fila al final
 
             int fila = dtgvRegistro.Rows.Add();
-            string tipodoc;
             int eleccion = cboxTipo.SelectedIndex;
-           
-                
-                  
+
 
             //Se agregan datos a las filas, considerando que s einicia en la columna 0
 
             dtgvRegistro.Rows[fila].Cells[1].Value = txtNombre.Text;
             dtgvRegistro.Rows[fila].Cells[2].Value = txtApellido.Text;
-           
+
             //tipo - combo box
 
             switch (eleccion)
 
-             {
-                 case 0:
-                     dtgvRegistro.Rows[fila].Cells[3].Value =  "DNI";
-                     break;
-                 case 1:
-                     dtgvRegistro.Rows[fila].Cells[3].Value = "Pasaporte";
-                     break;
-                 case 2:
-                     dtgvRegistro.Rows[fila].Cells[3].Value = "Libreta Civica";
-                     break;
-             }
+            {
+                case 0:
+                    dtgvRegistro.Rows[fila].Cells[3].Value = "DNI";
+                    break;
+                case 1:
+                    dtgvRegistro.Rows[fila].Cells[3].Value = "Pasaporte";
+                    break;
+                case 2:
+                    dtgvRegistro.Rows[fila].Cells[3].Value = "Libreta Civica";
+                    break;
+            }
             dtgvRegistro.Rows[fila].Cells[4].Value = txtNumero.Text;
             //boton apto fisico
-            if (chkAptoFisico.Checked==false)
+            if (chkAptoFisico.Checked == false)
             {
                 dtgvRegistro.Rows[fila].Cells[5].Value = "No entregado";
             }
@@ -132,6 +130,26 @@ namespace ClubDeportivo
         private void rdbtnSocio_CheckedChanged(object sender, EventArgs e)
         {
 
+        }
+
+        private void dtgvRegistro_CellContentClick(object sender, DataGridViewCellEventArgs e)
+        {
+            num = e.RowIndex;
+            if (num != -1)
+            {
+                MessageBox.Show((string)dtgvRegistro.Rows[num].Cells[1].Value);
+            }
+            else
+            {
+                MessageBox.Show("Se seleccionó el encabezado");
+            }
+
+        }
+
+        private void btnBorrar_Click(object sender, EventArgs e)
+        {
+            dtgvRegistro.Rows.RemoveAt(num);
+            //Elimina la fila que elegi
         }
     }
 }

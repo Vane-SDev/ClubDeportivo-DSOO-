@@ -71,6 +71,7 @@
             btnBorrar.TabIndex = 1;
             btnBorrar.Text = "BORRAR";
             btnBorrar.UseVisualStyleBackColor = true;
+            btnBorrar.Click += btnBorrar_Click;
             // 
             // txtNombre
             // 
@@ -207,6 +208,7 @@
             dtgvRegistro.Name = "dtgvRegistro";
             dtgvRegistro.Size = new Size(738, 155);
             dtgvRegistro.TabIndex = 16;
+            dtgvRegistro.CellContentClick += dtgvRegistro_CellContentClick;
             // 
             // idRegistro
             // 
