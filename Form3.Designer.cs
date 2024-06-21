@@ -28,38 +28,49 @@
         /// </summary>
         private void InitializeComponent()
         {
-            button1 = new Button();
-            button2 = new Button();
+            btnRegistrar = new Button();
+            btnBorrar = new Button();
             txtNombre = new TextBox();
-            textBox2 = new TextBox();
-            textBox3 = new TextBox();
-            textBox4 = new TextBox();
+            txtApellido = new TextBox();
+            txtNumero = new TextBox();
             lblNombre = new Label();
             lblApellido = new Label();
-            label1 = new Label();
             lblTipo = new Label();
             lblNumero = new Label();
             cboxTipo = new ComboBox();
+            chkAptoFisico = new CheckBox();
+            lblCondicion = new Label();
+            rdbtnSocio = new RadioButton();
+            radbtnNoSocio = new RadioButton();
+            dtgvRegistro = new DataGridView();
+            idRegistro = new DataGridViewTextBoxColumn();
+            Nombre = new DataGridViewTextBoxColumn();
+            Apellido = new DataGridViewTextBoxColumn();
+            Tipo = new DataGridViewTextBoxColumn();
+            Numero = new DataGridViewTextBoxColumn();
+            AptoFisico = new DataGridViewTextBoxColumn();
+            Condicion = new DataGridViewTextBoxColumn();
+            ((System.ComponentModel.ISupportInitialize)dtgvRegistro).BeginInit();
             SuspendLayout();
             // 
-            // button1
+            // btnRegistrar
             // 
-            button1.Location = new Point(572, 50);
-            button1.Name = "button1";
-            button1.Size = new Size(168, 45);
-            button1.TabIndex = 0;
-            button1.Text = "button1";
-            button1.UseVisualStyleBackColor = true;
-            button1.Click += button1_Click;
+            btnRegistrar.Location = new Point(572, 57);
+            btnRegistrar.Name = "btnRegistrar";
+            btnRegistrar.Size = new Size(168, 45);
+            btnRegistrar.TabIndex = 0;
+            btnRegistrar.Text = "REGISTRAR";
+            btnRegistrar.UseVisualStyleBackColor = true;
+            btnRegistrar.Click += button1_Click;
             // 
-            // button2
+            // btnBorrar
             // 
-            button2.Location = new Point(572, 140);
-            button2.Name = "button2";
-            button2.Size = new Size(168, 45);
-            button2.TabIndex = 1;
-            button2.Text = "button2";
-            button2.UseVisualStyleBackColor = true;
+            btnBorrar.Location = new Point(572, 125);
+            btnBorrar.Name = "btnBorrar";
+            btnBorrar.Size = new Size(168, 45);
+            btnBorrar.TabIndex = 1;
+            btnBorrar.Text = "BORRAR";
+            btnBorrar.UseVisualStyleBackColor = true;
             // 
             // txtNombre
             // 
@@ -67,35 +78,32 @@
             txtNombre.Name = "txtNombre";
             txtNombre.Size = new Size(197, 23);
             txtNombre.TabIndex = 2;
+            txtNombre.Text = "Nombre";
             txtNombre.TextChanged += textBox1_TextChanged;
             // 
-            // textBox2
+            // txtApellido
             // 
-            textBox2.Location = new Point(275, 127);
-            textBox2.Name = "textBox2";
-            textBox2.Size = new Size(197, 23);
-            textBox2.TabIndex = 3;
+            txtApellido.Location = new Point(275, 79);
+            txtApellido.Name = "txtApellido";
+            txtApellido.Size = new Size(197, 23);
+            txtApellido.TabIndex = 4;
+            txtApellido.Text = "Apellido";
+            txtApellido.TextChanged += textBox3_TextChanged;
             // 
-            // textBox3
+            // txtNumero
             // 
-            textBox3.Location = new Point(275, 83);
-            textBox3.Name = "textBox3";
-            textBox3.Size = new Size(197, 23);
-            textBox3.TabIndex = 4;
-            textBox3.TextChanged += textBox3_TextChanged;
-            // 
-            // textBox4
-            // 
-            textBox4.Location = new Point(275, 173);
-            textBox4.Name = "textBox4";
-            textBox4.Size = new Size(197, 23);
-            textBox4.TabIndex = 5;
+            txtNumero.Location = new Point(275, 125);
+            txtNumero.Name = "txtNumero";
+            txtNumero.Size = new Size(197, 23);
+            txtNumero.TabIndex = 5;
+            txtNumero.Text = "99999999";
+            txtNumero.TextChanged += textBox4_TextChanged;
             // 
             // lblNombre
             // 
             lblNombre.AutoSize = true;
             lblNombre.Font = new Font("Segoe UI", 12F, FontStyle.Bold, GraphicsUnit.Point, 0);
-            lblNombre.Location = new Point(95, 39);
+            lblNombre.Location = new Point(64, 39);
             lblNombre.Name = "lblNombre";
             lblNombre.Size = new Size(77, 21);
             lblNombre.TabIndex = 6;
@@ -106,29 +114,18 @@
             // 
             lblApellido.AutoSize = true;
             lblApellido.Font = new Font("Segoe UI", 12F, FontStyle.Bold, GraphicsUnit.Point, 0);
-            lblApellido.Location = new Point(97, 81);
+            lblApellido.Location = new Point(64, 81);
             lblApellido.Name = "lblApellido";
             lblApellido.Size = new Size(75, 21);
             lblApellido.TabIndex = 7;
             lblApellido.Text = "Apellido";
             lblApellido.Click += label1_Click_1;
             // 
-            // label1
-            // 
-            label1.AutoSize = true;
-            label1.Font = new Font("Segoe UI", 12F, FontStyle.Bold, GraphicsUnit.Point, 0);
-            label1.Location = new Point(97, 125);
-            label1.Name = "label1";
-            label1.Size = new Size(75, 21);
-            label1.TabIndex = 8;
-            label1.Text = "Apellido";
-            label1.Click += label1_Click_2;
-            // 
             // lblTipo
             // 
             lblTipo.AutoSize = true;
             lblTipo.Font = new Font("Segoe UI", 12F, FontStyle.Bold, GraphicsUnit.Point, 0);
-            lblTipo.Location = new Point(97, 175);
+            lblTipo.Location = new Point(64, 123);
             lblTipo.Name = "lblTipo";
             lblTipo.Size = new Size(44, 21);
             lblTipo.TabIndex = 9;
@@ -138,7 +135,7 @@
             // 
             lblNumero.AutoSize = true;
             lblNumero.Font = new Font("Segoe UI", 12F, FontStyle.Bold, GraphicsUnit.Point, 0);
-            lblNumero.Location = new Point(240, 175);
+            lblNumero.Location = new Point(240, 123);
             lblNumero.Name = "lblNumero";
             lblNumero.Size = new Size(29, 21);
             lblNumero.TabIndex = 10;
@@ -149,11 +146,101 @@
             cboxTipo.AutoCompleteCustomSource.AddRange(new string[] { "DNI", "Pasaporte" });
             cboxTipo.FormattingEnabled = true;
             cboxTipo.Items.AddRange(new object[] { "DNI", "Pasaporte", "Libreta Cívica", "Libreta de Enrolamiento" });
-            cboxTipo.Location = new Point(147, 177);
+            cboxTipo.Location = new Point(136, 125);
             cboxTipo.Name = "cboxTipo";
             cboxTipo.Size = new Size(87, 23);
             cboxTipo.TabIndex = 11;
             cboxTipo.Text = "DNI";
+            // 
+            // chkAptoFisico
+            // 
+            chkAptoFisico.AutoSize = true;
+            chkAptoFisico.CheckAlign = ContentAlignment.MiddleRight;
+            chkAptoFisico.Font = new Font("Segoe UI", 12F, FontStyle.Bold, GraphicsUnit.Point, 0);
+            chkAptoFisico.Location = new Point(73, 175);
+            chkAptoFisico.Name = "chkAptoFisico";
+            chkAptoFisico.Size = new Size(113, 25);
+            chkAptoFisico.TabIndex = 12;
+            chkAptoFisico.Text = "Apto Físico";
+            chkAptoFisico.UseVisualStyleBackColor = true;
+            chkAptoFisico.CheckedChanged += checkBox1_CheckedChanged;
+            // 
+            // lblCondicion
+            // 
+            lblCondicion.AutoSize = true;
+            lblCondicion.Font = new Font("Segoe UI", 12F, FontStyle.Bold, GraphicsUnit.Point, 0);
+            lblCondicion.Location = new Point(262, 179);
+            lblCondicion.Name = "lblCondicion";
+            lblCondicion.Size = new Size(88, 21);
+            lblCondicion.TabIndex = 13;
+            lblCondicion.Text = "Condición";
+            // 
+            // rdbtnSocio
+            // 
+            rdbtnSocio.AutoSize = true;
+            rdbtnSocio.Location = new Point(368, 163);
+            rdbtnSocio.Name = "rdbtnSocio";
+            rdbtnSocio.Size = new Size(60, 19);
+            rdbtnSocio.TabIndex = 14;
+            rdbtnSocio.TabStop = true;
+            rdbtnSocio.Text = "SOCIO";
+            rdbtnSocio.UseVisualStyleBackColor = true;
+            // 
+            // radbtnNoSocio
+            // 
+            radbtnNoSocio.AutoSize = true;
+            radbtnNoSocio.Location = new Point(368, 188);
+            radbtnNoSocio.Name = "radbtnNoSocio";
+            radbtnNoSocio.Size = new Size(81, 19);
+            radbtnNoSocio.TabIndex = 15;
+            radbtnNoSocio.TabStop = true;
+            radbtnNoSocio.Text = "NO SOCIO";
+            radbtnNoSocio.UseVisualStyleBackColor = true;
+            radbtnNoSocio.CheckedChanged += radioButton2_CheckedChanged;
+            // 
+            // dtgvRegistro
+            // 
+            dtgvRegistro.ColumnHeadersHeightSizeMode = DataGridViewColumnHeadersHeightSizeMode.AutoSize;
+            dtgvRegistro.Columns.AddRange(new DataGridViewColumn[] { idRegistro, Nombre, Apellido, Tipo, Numero, AptoFisico, Condicion });
+            dtgvRegistro.Location = new Point(36, 233);
+            dtgvRegistro.Name = "dtgvRegistro";
+            dtgvRegistro.Size = new Size(738, 155);
+            dtgvRegistro.TabIndex = 16;
+            // 
+            // idRegistro
+            // 
+            idRegistro.HeaderText = "Id Registro";
+            idRegistro.Name = "idRegistro";
+            // 
+            // Nombre
+            // 
+            Nombre.HeaderText = "Nombre";
+            Nombre.Name = "Nombre";
+            // 
+            // Apellido
+            // 
+            Apellido.HeaderText = "Apellido";
+            Apellido.Name = "Apellido";
+            // 
+            // Tipo
+            // 
+            Tipo.HeaderText = "Tipo";
+            Tipo.Name = "Tipo";
+            // 
+            // Numero
+            // 
+            Numero.HeaderText = "Numero";
+            Numero.Name = "Numero";
+            // 
+            // AptoFisico
+            // 
+            AptoFisico.HeaderText = "Apto Fisico";
+            AptoFisico.Name = "AptoFisico";
+            // 
+            // Condicion
+            // 
+            Condicion.HeaderText = "Condicion";
+            Condicion.Name = "Condicion";
             // 
             // registroPersona
             // 
@@ -161,37 +248,53 @@
             AutoScaleMode = AutoScaleMode.Font;
             BackColor = SystemColors.GradientInactiveCaption;
             ClientSize = new Size(800, 450);
+            Controls.Add(dtgvRegistro);
+            Controls.Add(radbtnNoSocio);
+            Controls.Add(rdbtnSocio);
+            Controls.Add(lblCondicion);
+            Controls.Add(chkAptoFisico);
             Controls.Add(cboxTipo);
             Controls.Add(lblNumero);
             Controls.Add(lblTipo);
-            Controls.Add(label1);
             Controls.Add(lblApellido);
             Controls.Add(lblNombre);
-            Controls.Add(textBox4);
-            Controls.Add(textBox3);
-            Controls.Add(textBox2);
+            Controls.Add(txtNumero);
+            Controls.Add(txtApellido);
             Controls.Add(txtNombre);
-            Controls.Add(button2);
-            Controls.Add(button1);
+            Controls.Add(btnBorrar);
+            Controls.Add(btnRegistrar);
             Name = "registroPersona";
+            RightToLeft = RightToLeft.No;
             Text = "Registro Persona";
+            Load += registroPersona_Load;
+            ((System.ComponentModel.ISupportInitialize)dtgvRegistro).EndInit();
             ResumeLayout(false);
             PerformLayout();
         }
 
         #endregion
 
-        private Button button1;
-        private Button button2;
+        private Button btnRegistrar;
+        private Button btnBorrar;
         private TextBox txtNombre;
-        private TextBox textBox2;
-        private TextBox textBox3;
-        private TextBox textBox4;
+        private TextBox txtApellido;
+        private TextBox txtNumero;
         private Label lblNombre;
         private Label lblApellido;
-        private Label label1;
         private Label lblTipo;
         private Label lblNumero;
         private ComboBox cboxTipo;
+        private CheckBox chkAptoFisico;
+        private Label lblCondicion;
+        private RadioButton rdbtnSocio;
+        private RadioButton radbtnNoSocio;
+        private DataGridView dtgvRegistro;
+        private DataGridViewTextBoxColumn idRegistro;
+        private DataGridViewTextBoxColumn Nombre;
+        private DataGridViewTextBoxColumn Apellido;
+        private DataGridViewTextBoxColumn Tipo;
+        private DataGridViewTextBoxColumn Numero;
+        private DataGridViewTextBoxColumn AptoFisico;
+        private DataGridViewTextBoxColumn Condicion;
     }
 }
