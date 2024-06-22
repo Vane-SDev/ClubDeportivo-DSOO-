@@ -1,4 +1,4 @@
-//using Diseñologin.Datos;
+using ClubDeportivo;
 using Org.BouncyCastle.Pqc.Crypto.Lms;
 using static System.Runtime.InteropServices.JavaScript.JSType;
 using System.Data;
@@ -101,6 +101,11 @@ namespace ClubDeportivo
             {
                 MessageBox.Show("Usuario y/o password incorrecto");
             }
+
+        }
+
+        private void lblTitulo_Click(object sender, EventArgs e)
+        {
 
         }
     }

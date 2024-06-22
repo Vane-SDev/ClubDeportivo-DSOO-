@@ -93,6 +93,7 @@
             lblTitulo.Size = new Size(232, 37);
             lblTitulo.TabIndex = 4;
             lblTitulo.Text = "Ingreso al Sistema";
+            lblTitulo.Click += lblTitulo_Click;
             // 
             // frm_login
             // 

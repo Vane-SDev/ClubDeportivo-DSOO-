@@ -14,7 +14,7 @@ namespace ClubDeportivo.Datos
     internal class Usuarios
     {
         // creamos un metodo que retorne una tabla con la informacion
-        public DataTable Log_Usu(string L_Usu, string P_Usu)
+        public DataTable Log_Usu(string L_usu, string P_usu)
         {
             MySqlDataReader resultado; // variable de tipo datareader
             DataTable tabla = new DataTable();
@@ -26,13 +26,11 @@ namespace ClubDeportivo.Datos
 
                 // del procedimiento almacenado y la referencia a la conexion
 
-                MySqlCommand comando = new MySqlCommand
-                ("IngresoLogin", sqlCon);
+                MySqlCommand comando = new MySqlCommand("IngresoLogin", sqlCon);
                 comando.CommandType = CommandType.StoredProcedure;
                 // definimos los parametros que tiene el procedure
-                comando.Parameters.Add("NombreUsuario",
-                MySqlDbType.VarChar).Value = L_Usu;
-                comando.Parameters.Add("ClaveUsuario", MySqlDbType.VarChar).Value =P_Usu;
+                comando.Parameters.Add("usu",MySqlDbType.VarChar).Value = L_usu;
+                comando.Parameters.Add("pass", MySqlDbType.VarChar).Value = P_usu;
                 
                 // abrimos la conexion
                 sqlCon.Open();

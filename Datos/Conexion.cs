@@ -23,7 +23,7 @@ namespace ClubDeportivo.Datos
         private static Conexion? con = null;
         private Conexion() // asignamos valores a las variables de la conexion
         {
-            baseDatos = "clubdeportivo";
+            baseDatos = "proyecto";
             servidor = "localhost";
             puerto = "3306";
             usuario = "root";
