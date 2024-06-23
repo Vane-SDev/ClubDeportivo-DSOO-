@@ -96,17 +96,29 @@ namespace ClubDeportivo
             {
                 // quiere decir que el resultado tiene 1 fila por lo que el usuario EXISTE
                 MessageBox.Show("Ingreso exitoso");
+
+                /*una vez que tenemos la conexion establecida PASAMOS al 
+                 * formulario PRINCIPAL
+                 * Se debe "Instanciar" un objeto de la clase formulario principal  */
+
+                VentanaPpal Principal = new VentanaPpal();
+
+                /* la siguiente linea permite tomar el dominio de la primera columna
+                * de la primera fila del resultado de la ejecucion de la
+                query */
+
+                Principal.usuario = Convert.ToString(TxtBUsuario.Text);
+                Principal.Show(); // se llama al formulario principal
+                this.Hide(); // se oculta el formulario del login
             }
             else
             {
                 MessageBox.Show("Usuario y/o password incorrecto");
             }
-
         }
+            private void lblTitulo_Click(object sender, EventArgs e)
+            {
 
-        private void lblTitulo_Click(object sender, EventArgs e)
-        {
-
+            }
         }
-    }
-}
+    } 
