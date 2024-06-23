@@ -54,6 +54,7 @@
             btn_registrar.TabIndex = 2;
             btn_registrar.Text = "Registrar Usuario";
             btn_registrar.UseVisualStyleBackColor = true;
+            btn_registrar.Click += btn_registrar_Click;
             // 
             // btn_emitirCarnet
             // 

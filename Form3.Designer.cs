@@ -50,12 +50,13 @@
             Numero = new DataGridViewTextBoxColumn();
             AptoFisico = new DataGridViewTextBoxColumn();
             Condicion = new DataGridViewTextBoxColumn();
+            btVolver = new Button();
             ((System.ComponentModel.ISupportInitialize)dtgvRegistro).BeginInit();
             SuspendLayout();
             // 
             // btnRegistrar
             // 
-            btnRegistrar.Location = new Point(572, 57);
+            btnRegistrar.Location = new Point(572, 25);
             btnRegistrar.Name = "btnRegistrar";
             btnRegistrar.Size = new Size(168, 45);
             btnRegistrar.TabIndex = 0;
@@ -65,7 +66,7 @@
             // 
             // btnBorrar
             // 
-            btnBorrar.Location = new Point(572, 125);
+            btnBorrar.Location = new Point(572, 81);
             btnBorrar.Name = "btnBorrar";
             btnBorrar.Size = new Size(168, 45);
             btnBorrar.TabIndex = 1;
@@ -245,12 +246,23 @@
             Condicion.HeaderText = "Condicion";
             Condicion.Name = "Condicion";
             // 
+            // btVolver
+            // 
+            btVolver.Location = new Point(572, 150);
+            btVolver.Name = "btVolver";
+            btVolver.Size = new Size(168, 45);
+            btVolver.TabIndex = 17;
+            btVolver.Text = "VOLVER";
+            btVolver.UseVisualStyleBackColor = true;
+            btVolver.Click += button1_Click_1;
+            // 
             // registroPersona
             // 
             AutoScaleDimensions = new SizeF(7F, 15F);
             AutoScaleMode = AutoScaleMode.Font;
             BackColor = SystemColors.GradientInactiveCaption;
             ClientSize = new Size(800, 450);
+            Controls.Add(btVolver);
             Controls.Add(dtgvRegistro);
             Controls.Add(radbtnNoSocio);
             Controls.Add(rdbtnSocio);
@@ -299,5 +311,6 @@
         private DataGridViewTextBoxColumn Numero;
         private DataGridViewTextBoxColumn AptoFisico;
         private DataGridViewTextBoxColumn Condicion;
+        private Button btVolver;
     }
 }

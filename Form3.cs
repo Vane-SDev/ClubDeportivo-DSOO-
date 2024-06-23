@@ -65,24 +65,49 @@ namespace ClubDeportivo
             else
             {
                 dtgvRegistro.Rows[fila].Cells[6].Value = "No Socio";
-            }
+            }         
+           //FALTA PONER UN AVISO EN CASO DE QUE NO ESTE PRESENTAOD EL APTO FISICO
 
+         if (txtNombre.Text == "" || txtApellido.Text == "" || txtNumero.Text == "" )
+                {
+                    MessageBox.Show("Debe completar datos requeridos (*) ",
+                    "AVISO DEL SISTEMA", MessageBoxButtons.OK,
+                    MessageBoxIcon.Error);
+                }
+                else
+                {
+                    string respuesta;
+                    Entidades.E_Persona pers = new Entidades.E_Persona();
+                    pers.nombre = txtNombre.Text;
+                    pers.apellido = txtApellido.Text;
+                    pers.nrodoc = Convert.ToInt32(txtNumero.Text);
+                    pers.tipodoc = cboxTipo.Text;
 
-            //Blanqueo de los text box 
+                    // instanciamos para usar el metodo dentro de postulantes
+                    Datos.Persona personas= new Datos.Persona();
+                    respuesta = personas.Nuevo_Registro(pers);
+                    bool esnumero = int.TryParse(respuesta, out int codigo);
+                    if (esnumero)
+                    {
+                        if (codigo == 1)
+                        {
+                            MessageBox.Show("POSTULANTE YA EXISTE", "AVISO DEL SISTEMA",
+                            MessageBoxButtons.OK,
+                            MessageBoxIcon.Error);
+                        }
+                        else
+                        {
+                            MessageBox.Show("se almaceno con exito con el codigo Nro " + respuesta, "AVISO DEL SISTEMA",
+                            MessageBoxButtons.OK,
+                            MessageBoxIcon.Question);
+                        }
+                    }
+                }
 
-            txtNombre.Text = "";
-            txtApellido.Text = "";
-            txtNumero.Text = "";
-            rdbtnSocio.Checked = true;
-            chkAptoFisico.Checked = false;
-
-            //Pone foco en el objeto detallado
-
-            txtNombre.Focus();
-
+            
         }
 
-        private void textBox1_TextChanged(object sender, EventArgs e)
+            private void textBox1_TextChanged(object sender, EventArgs e)
         {
 
         }
@@ -148,8 +173,27 @@ namespace ClubDeportivo
 
         private void btnBorrar_Click(object sender, EventArgs e)
         {
-            dtgvRegistro.Rows.RemoveAt(num);
+            //Blanqueo de los text box 
+
+            txtNombre.Text = "";
+            txtApellido.Text = "";
+            txtNumero.Text = "";
+            rdbtnSocio.Checked = true;
+            chkAptoFisico.Checked = false;
+
+            //Pone foco en el objeto detallado
+
+            txtNombre.Focus();
+            // dtgvRegistro.Rows.RemoveAt(num);
             //Elimina la fila que elegi
+        }
+
+        private void button1_Click_1(object sender, EventArgs e)
+        {
+            VentanaPpal principal = new VentanaPpal();
+            principal.Show();
+            this.Hide();
+
         }
     }
 }
