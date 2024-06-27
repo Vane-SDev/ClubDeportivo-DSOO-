@@ -19,13 +19,14 @@ namespace ClubDeportivo.Datos
             try
             {
                 sqlCon = Conexion.getInstancia().CrearConexion();
-                MySqlCommand comando = new MySqlCommand("NuevoRegistro",
-                sqlCon);
+                MySqlCommand comando = new MySqlCommand("Nuevo_Registro",sqlCon);
                 comando.CommandType = CommandType.StoredProcedure;
                 comando.Parameters.Add("nom", MySqlDbType.VarChar).Value = personas.nombre;
                 comando.Parameters.Add("ape", MySqlDbType.VarChar).Value = personas.apellido;
                 comando.Parameters.Add("tipo", MySqlDbType.VarChar).Value = personas.tipodoc;
                 comando.Parameters.Add("doc", MySqlDbType.Int32).Value = personas.nrodoc;
+                comando.Parameters.Add("apto", MySqlDbType.Int32).Value = personas.aptofisico;
+                comando.Parameters.Add("cond", MySqlDbType.Int32).Value = personas.condicion;
                 //comando.Parameters.Add("apto", MySqlDbType.BOO)
                 MySqlParameter ParCodigo = new MySqlParameter();
                 ParCodigo.ParameterName = "res";

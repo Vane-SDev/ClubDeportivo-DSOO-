@@ -68,13 +68,13 @@ namespace ClubDeportivo
             }         
            //FALTA PONER UN AVISO EN CASO DE QUE NO ESTE PRESENTAOD EL APTO FISICO
 
-         if (txtNombre.Text == "" || txtApellido.Text == "" || txtNumero.Text == "" )
+        if (txtNombre.Text == "" || txtApellido.Text == "" || txtNumero.Text == "" )
                 {
                     MessageBox.Show("Debe completar datos requeridos (*) ",
                     "AVISO DEL SISTEMA", MessageBoxButtons.OK,
                     MessageBoxIcon.Error);
                 }
-                else
+        else
                 {
                     string respuesta;
                     Entidades.E_Persona pers = new Entidades.E_Persona();
@@ -103,8 +103,7 @@ namespace ClubDeportivo
                         }
                     }
                 }
-
-            
+                    
         }
 
             private void textBox1_TextChanged(object sender, EventArgs e)

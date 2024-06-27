@@ -51,12 +51,13 @@
             AptoFisico = new DataGridViewTextBoxColumn();
             Condicion = new DataGridViewTextBoxColumn();
             btVolver = new Button();
+            btnLimpiar = new Button();
             ((System.ComponentModel.ISupportInitialize)dtgvRegistro).BeginInit();
             SuspendLayout();
             // 
             // btnRegistrar
             // 
-            btnRegistrar.Location = new Point(572, 25);
+            btnRegistrar.Location = new Point(572, 12);
             btnRegistrar.Name = "btnRegistrar";
             btnRegistrar.Size = new Size(168, 45);
             btnRegistrar.TabIndex = 0;
@@ -66,7 +67,7 @@
             // 
             // btnBorrar
             // 
-            btnBorrar.Location = new Point(572, 81);
+            btnBorrar.Location = new Point(572, 63);
             btnBorrar.Name = "btnBorrar";
             btnBorrar.Size = new Size(168, 45);
             btnBorrar.TabIndex = 1;
@@ -248,7 +249,7 @@
             // 
             // btVolver
             // 
-            btVolver.Location = new Point(572, 150);
+            btVolver.Location = new Point(572, 113);
             btVolver.Name = "btVolver";
             btVolver.Size = new Size(168, 45);
             btVolver.TabIndex = 17;
@@ -256,12 +257,22 @@
             btVolver.UseVisualStyleBackColor = true;
             btVolver.Click += button1_Click_1;
             // 
+            // btnLimpiar
+            // 
+            btnLimpiar.Location = new Point(572, 163);
+            btnLimpiar.Name = "btnLimpiar";
+            btnLimpiar.Size = new Size(168, 45);
+            btnLimpiar.TabIndex = 18;
+            btnLimpiar.Text = "LIMPIAR";
+            btnLimpiar.UseVisualStyleBackColor = true;
+            // 
             // registroPersona
             // 
             AutoScaleDimensions = new SizeF(7F, 15F);
             AutoScaleMode = AutoScaleMode.Font;
             BackColor = SystemColors.GradientInactiveCaption;
             ClientSize = new Size(800, 450);
+            Controls.Add(btnLimpiar);
             Controls.Add(btVolver);
             Controls.Add(dtgvRegistro);
             Controls.Add(radbtnNoSocio);
@@ -312,5 +323,6 @@
         private DataGridViewTextBoxColumn AptoFisico;
         private DataGridViewTextBoxColumn Condicion;
         private Button btVolver;
+        private Button btnLimpiar;
     }
 }
