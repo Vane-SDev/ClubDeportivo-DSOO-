@@ -27,7 +27,7 @@ constraint pk_persona primary key (idRegistro)
 insert into usuario(idUsuario,nombreUsuario,claveUsuario) values
 (1,'Vanesa','1234'),
 (2,'Estefania','5678'),
-(3,'Lola789','456789');
+(3,'Lola','1111');
 
 DELIMITER //  
 
@@ -51,7 +51,7 @@ si los datos de los parametros existen la consulta arroja 1 FILA
 si los datos de los parametros NO EXISTEN la consulta arroja 0 FILAS
 ============================================================================= */
  
- create procedure NuevoRegistro(in nom varchar(50),in ape varchar(50),in tipo varchar(25), 
+ create procedure Nuevo_Registro(in nom varchar(50),in ape varchar(50),in tipo varchar(25), 
 								in doc int, in apto bool, in cond bool,
 								out res int)
  begin
@@ -60,7 +60,7 @@ si los datos de los parametros NO EXISTEN la consulta arroja 0 FILAS
     
      set filas = (select count(*) from persona);
      if filas = 0 then
-		set filas = 452; /* consideramos a este numero como el primer numero de postulante */
+		set filas = 600; /* consideramos a este numero como el primer numero de inscripto */
      else
      /* -------------------------------------------------------------------------------
 		buscamos el ultimo numero de postulante almacenado para sumarle una unidad y
@@ -75,10 +75,11 @@ si los datos de los parametros NO EXISTEN la consulta arroja 0 FILAS
      end if;
 	 
 	  if existe = 0 then	 
-		 insert into persona values(filas,nom,ape,tipo,doc,apto,cond);
+		 insert into persona values(filas,nom,ape,tipo,doc,1,1);
 		 set res  = filas;
 	  else
 		 set res = existe;
       end if;		 
-    
-     end //
+	end //
+
+select * from persona
