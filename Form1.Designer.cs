@@ -56,7 +56,7 @@
             TxtBUsuario.Name = "TxtBUsuario";
             TxtBUsuario.Size = new Size(361, 23);
             TxtBUsuario.TabIndex = 1;
-            TxtBUsuario.Text = "Usuario";
+            TxtBUsuario.Text = "Usuaria/o";
             TxtBUsuario.TextChanged += textBox1_TextChanged;
             TxtBUsuario.Enter += TxtBUsuario_Enter;
             TxtBUsuario.Leave += TxtBUsuario_Leave;
